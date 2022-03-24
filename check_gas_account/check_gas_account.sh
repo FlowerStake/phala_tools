@@ -8,10 +8,11 @@ ADDRESS=$2
 
 JQ_BIN=`which jq`
 BC_BIN=`which bc`
+cURL_BIN=`which curl`
 
-if [ "$JQ_BIN" = "" ] || [ "$BC_BIN" = "" ];then
+if [ "$JQ_BIN" = "" ] || [ "$BC_BIN" = "" ] || [ "$cURL_BIN" = "" ];then
 	echo ""
-        echo "You need to have installed 'jq' and 'bc' tools, do it with: sudo apt install jq bc"
+        echo "You need to have installed 'jq', 'bc' and 'cURL' tools, do it with: sudo apt install jq bc curl"
 	echo ""
 	exit 3
 fi
@@ -41,13 +42,13 @@ if [ -s $TEMPFILE ];then
     PREVIOUS_BALANCE=`cat $TEMPFILE`
 else
     touch $TEMPFILE
-    BALANCE=`curl -s -X POST 'https://khala.api.subscan.io/api/open/account' --header 'Content-Type: application/json' --data-raw '{"address":"'$ADDRESS'"}'|$JQ_BIN '.data.balance' -r |tee $TEMPFILE`
+    BALANCE=`$cURL_BIN -s -X POST 'https://khala.api.subscan.io/api/open/account' --header 'Content-Type: application/json' --data-raw '{"address":"'$ADDRESS'"}'|$JQ_BIN '.data.balance' -r |tee $TEMPFILE`
     echo "TEMPFILE does not exist. Created with Balance = $BALANCE PHA"
     exit 3
 fi
 
 ## Get current account balance from SubScan API
-CURRENT_BALANCE=`curl -s -X POST 'https://khala.api.subscan.io/api/open/account' --header 'Content-Type: application/json' --data-raw '{"address":"'$ADDRESS'"}'|$JQ_BIN '.data.balance' -r|tee $TEMPFILE`
+CURRENT_BALANCE=`$cURL_BIN -s -X POST 'https://khala.api.subscan.io/api/open/account' --header 'Content-Type: application/json' --data-raw '{"address":"'$ADDRESS'"}'|$JQ_BIN '.data.balance' -r|tee $TEMPFILE`
 
 ## Format balance for performance data
 PERF_BALANCE=`echo $CURRENT_BALANCE|awk '{printf "%.3f", $0}'`
