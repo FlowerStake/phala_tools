@@ -35,7 +35,7 @@ if [ $# -lt 2 ] || [ $WARN -le $CRIT ] || [ "$JQ_BIN" = "" ] || [ "$BC_BIN" = ""
 fi
 
 ## Our file to save previous account balance
-TEMPFILE="/var/tmp/gas_balance_$HOST_$ADDRESS"
+TEMPFILE="/var/tmp/gas_balance_${HOST}_${ADDRESS}"
 
 ## Check if Temp File Exist and not empty, if not, we create it
 if [ -s $TEMPFILE ];then
