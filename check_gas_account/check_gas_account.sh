@@ -11,7 +11,7 @@ BC_BIN=`which bc`
 
 if [ "$JQ_BIN" = "" ] || [ "$BC_BIN" = "" ];then
 	echo ""
-        echo "You need to have installed 'jq' and 'bc' tools. Do it with: sudo apt install jq bc"
+        echo "You need to have installed 'jq' and 'bc' tools, do it with: sudo apt install jq bc"
 	echo ""
 	exit 3
 fi
