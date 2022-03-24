@@ -1,6 +1,6 @@
-# check_gas_account
+# check_gas_account.sh
 
-Script to check if GAS account balance used to pay miner transactions is decreasing over time.
+Shell script to check if GAS account balance used to pay miner transactions is decreasing over time.
 
 If GAS account balance is not decreasing might means there is any issue.
 
