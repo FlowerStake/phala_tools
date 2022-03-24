@@ -23,8 +23,8 @@ NOTE: You need to have installed `jq` and `bc` tools, do it with command `sudo a
 
 Sample output:
 
-`user@host~$ ./check_gas_account myminer1 44FhjTudjfIfusK8fKdofudlf7KSdfkK98Sgs57SsLkfuMn`
+`user@host~$ ./check_gas_account myminer1 44FhjTudjfIfusK8fKdofudlf7KSdfkK98Sgs57SsLkfuMn`<br />
 `OK - GAS Account Balance is decreasing. Last Fee: -0.010000 PHA|PHA=49.142;2;1;0;100 FEE=0.010000`
 
-`user@host~$ ./check_gas_account myminer1 44FhjTudjfIfusK8fKdofudlf7KSdfkK98Sgs57SsLkfuMn`
+`user@host~$ ./check_gas_account myminer1 44FhjTudjfIfusK8fKdofudlf7KSdfkK98Sgs57SsLkfuMn`<br />
 `CRITICAL - GAS Account Balance is NOT decreasing (49.142343429333 = 49.142343429333)|PHA=49.142;2;1;0;100 FEE=0`
