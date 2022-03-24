@@ -17,4 +17,4 @@ To see help, execute it without parameters:
                 MAXIMUM (optional): Max amount of funds on the account (Default: 100. Only for graph pourposes)
 
 
-NOTE: You need to have installed 'jq' and 'bc' tools. Do it with command `sudo apt install jq bc`
+NOTE: You need to have installed `jq` and `bc` tools. Do it with command `sudo apt install jq bc`
