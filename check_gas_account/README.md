@@ -20,3 +20,11 @@ To see help, execute it without parameters:
 
 
 NOTE: You need to have installed `jq` and `bc` tools, do it with command `sudo apt install jq bc`
+
+Sample output:
+
+`user@host~$ ./check_gas_account myminer1 44FhjTudjfIfusK8fKdofudlf7KSdfkK98Sgs57SsLkfuMn`
+`OK - GAS Account Balance is decreasing. Last Fee: -0.010000 PHA|PHA=49.142;2;1;0;100 FEE=0.010000`
+
+`user@host~$ ./check_gas_account myminer1 44FhjTudjfIfusK8fKdofudlf7KSdfkK98Sgs57SsLkfuMn`
+`CRITICAL - GAS Account Balance is NOT decreasing (49.142343429333 = 49.142343429333)|PHA=49.142;2;1;0;100 FEE=0`
