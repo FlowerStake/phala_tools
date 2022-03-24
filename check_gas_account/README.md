@@ -1,8 +1,10 @@
 # check_gas_account.sh
 
-Shell script to check if GAS account balance used to pay miner transactions is decreasing over time.
+Shell script to check if GAS account balance used to pay miner transactions is decreasing over time. If GAS account balance is not decreasing might means there is any issue.
 
-If GAS account balance is not decreasing might means there is any issue.
+It is specifically designed to be used on nagios/naemon or similar monitoring tools, but you can run it from cron and add some kind of notifications to it.
+
+NOTE: The check interval should be adjusted on a case-by-case basis, but it is not recommended to be less than 2 hours.
 
 To see help, execute it without parameters:
 
