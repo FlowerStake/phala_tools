@@ -43,7 +43,7 @@ if [ -s $TEMPFILE ];then
 else
     touch $TEMPFILE
     BALANCE=`$cURL_BIN -s -X POST 'https://khala.api.subscan.io/api/open/account' --header 'Content-Type: application/json' --data-raw '{"address":"'$ADDRESS'"}'|$JQ_BIN '.data.balance' -r |tee $TEMPFILE`
-    echo "TEMPFILE does not exist. Created with Balance = $BALANCE PHA"
+    echo "First run! TEMPFILE does not exist. Creating with Balance = $BALANCE PHA"
     exit 3
 fi
 
